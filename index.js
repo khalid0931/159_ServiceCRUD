@@ -47,3 +47,7 @@ app.post('/biodata', (req, res) => {
         res.status(500).json({ error: err.message });
     });
 });
+
+app.put('/biodata/:id', (req, res) => {
+    const { id } = req.params;
+    const { nama, nim, kelas } = req.body;
