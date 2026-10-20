@@ -20,7 +20,7 @@ const pool = new Pool({
 
 app.get('/', (req, res, next) => {
     console.log("TEST DATA :");
-    pool.query('SELECT * FROM biodata')
+    pool.query('SELECT * FROM biodata ORDER BY id')
     .then(testData => {
         console.log(testData);
         res.send(testData.rows);
